@@ -1,0 +1,22 @@
+mixin accordion(id, items)
+	.o-collapselist(id=id data-module="accordion")
+		each item, i in items
+			.panel.u-posr.o-collapselist__item
+				.u-posa.u-t0.u-b0.u-l0.u-r0.u-w100p.u-h100p.u-bdb.u-bdt.u-o0.u-bdc-text.o-collapselist__indicator
+				.o-collapselist__head(id="#" + id +"-head-" + i)
+					.u-bdt.u-c-text.o-collapselist__title
+						a.u-df.justify-content-between.align-items-start.u-pxb1.u-pyb2.u-tdn.u-link-colorstay.u-posr.o-collapselist__title-link.collapsed(data-toggle="collapse", href="#" + id + "-collapse-"+i, aria-expanded="false" aria-controls=id + "-collapse-"+i)
+							span.u-dib=item.text
+							.u-posr.u-c-secondary.u-tac.u-mrb1.u-mtb0p5
+								+icon('chevron-up16').u-fill-cc.u-db.u-dn-on-collapsed.o-icon--s
+								+icon('chevron-down16').u-fill-cc.u-dn.u-db-on-collapsed.o-icon--s
+				.u-posr.o-collapselist__panel(class="collapse", aria-labelledby=id + "-head-" + i, data-parent="#" + id, id=id + "-collapse-"+i)
+					.o-collapselist__body
+						.u-plb1.o-collapselist__content
+							.o-richtext.o-collapselist__text
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.
+							if item.img
+								.u-mtb4.u-fx10a.o-collapselist__media
+									img.js-lazysizes(data-src=item.img, alt="")
+
+

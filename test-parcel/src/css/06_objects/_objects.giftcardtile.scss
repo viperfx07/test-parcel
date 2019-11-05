@@ -1,0 +1,52 @@
+.o-giftcardtile{
+	$_this: &;
+	&__price{
+		border-color: rgba(#fff, .4);
+	}
+
+	&__expand{
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+
+		@include mq-down(xs){
+			transition: .5s;
+			#{$_this}__expander:not(.collapsed) ~ &{
+				margin-left: -$grid-gutter-width / 2;
+				margin-right: -$grid-gutter-width / 2;
+				margin-bottom: $grid-gutter-width;
+			}
+		}
+
+	}
+
+	&__tile{
+		@include mq-down(xs){
+			transition: .5s;
+			#{$_this}__expander:not(.collapsed) ~ &{
+				margin-left: -$grid-gutter-width / 2;
+				margin-right: -$grid-gutter-width / 2;
+			}
+		}
+
+		&shadow{
+			transition: .4s;
+			box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.2);
+
+			#{$_this}__expander.collapsed ~ #{$_this}__tile &{
+				opacity: 0;
+			}
+		}
+	}
+
+	&__expandindicator{
+		&--collapsed{
+			#{$_this}__expander.collapsed ~ #{$_this}__tile &{
+				display: block;
+			}
+		}
+		&--expanded{
+			#{$_this}__expander.collapsed ~ #{$_this}__tile &{
+				display: none;
+			}
+		}
+	}
+}

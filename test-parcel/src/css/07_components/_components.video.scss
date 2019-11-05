@@ -1,0 +1,14 @@
+.c-video{
+	&__media{
+		height: 260px;
+		@include mq(sm){
+			height: 440px;
+		}
+		@include mq(md)	{
+			height: 500px;
+		}
+		@include mq(lg){
+			height: 600px;
+		}
+	}
+}

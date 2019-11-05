@@ -1,0 +1,5 @@
+.o-noheropage{
+	@include mq(lg){
+		padding-top: 45px;
+	}
+}

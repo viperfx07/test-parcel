@@ -1,0 +1,141 @@
+.c-climbs{
+	$_this: &;
+	@include mq(lg){
+		padding-bottom: 80px;
+	}
+
+	&__col{
+		transition: .4s;
+
+		&.inactive{
+			@include mq-down(md){
+				opacity: .5;
+				z-index: auto;
+			}
+		}
+
+		&.active{
+			@include mq-down(xs){
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	&__tile{
+		transition: .4s;
+		&:hover{
+			@include mq(lg){
+				transform: translateY(-16px);
+			}
+		}
+		&-media{
+			@include mq(lg){
+				height: 620px;
+				padding-bottom: 0;
+			}
+		}
+		&-img{
+			transition: .4s;
+
+			#{$_this}__tile:hover &{
+				@include mq(lg){
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		&-toggle{
+			&-border{
+				transition: opacity .2s .2s;
+				.active &{
+					transition: .4s;
+					opacity: 0;
+				}
+			}
+		}
+
+		&-detail{
+			box-shadow: 0px 11px 10px rgba(0, 0, 0, 0.15);
+			position: static;
+			@include mq(sm){
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+			}
+
+			@include mq(lg){
+				transition: .4s;
+				position: absolute;
+				opacity: 0;
+				overflow: hidden;
+			}
+
+			#{$_this}__tile:hover &{
+				opacity: 1;
+			}
+
+		}
+
+		&-title{
+			transition: .4s;
+			@include mq(lg){
+				#{$_this}__tile:hover &{
+					color: $tertiary6;
+					transform: translateY(-(24px + 56px));
+				}
+			}
+		}
+	}
+
+	&__tiledetail-sm{
+		// -16px for gap, -40px for the btn
+		margin-top: -16px + (-40px);
+	}
+
+	&__features{
+		&#{&}{
+			ul{
+				margin-bottom: 0;
+				li{
+					padding-left: 16px;
+					&:before{
+						left: 0;
+					}
+				}
+			}
+		}
+
+		&-findoutmore{
+			&-circle{
+				width: 6px;
+				height: 6px;
+			}
+		}
+	}
+
+	&__anim{
+		transition: .4s;
+	}
+
+	&__icontiles{
+		&-row{
+			@include mq(sm){
+				margin-left: -32px;
+				margin-right: -32px;
+
+				> [class*="col-"]{
+					padding-left: 32px;
+					padding-right: 32px;
+				}
+			}
+			@include mq(lg){
+				margin-left: -40px;
+				margin-right: -40px;
+
+				> [class*="col-"]{
+					padding-left: 40px;
+					padding-right: 40px;
+				}
+			}
+		}
+	}
+}

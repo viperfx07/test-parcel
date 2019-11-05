@@ -1,0 +1,19 @@
+mixin module--table(title, additionalClass)
+	section.c-module.c-module--table
+		.c-module__inner
+			.container
+				.row
+					.col-md-10.offset-md-1.col-lg-8.offset-lg-2
+						table(data-module="tablesaw", data-module-options="{}")
+							thead
+								tr
+									each item in [1,2,3,4,5,6,7]
+										th Head #{item}
+							tbody
+								each row in [1,2,3,4,5,6,7]
+									tr
+										each col in [1,2,3,4,5,6,7]
+											if col==1
+												td Row #{row}
+											else
+												td Row #{row}

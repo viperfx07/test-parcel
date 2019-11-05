@@ -1,0 +1,16 @@
+.c-newslist{
+	$_this: &;
+	&__item{
+		#{$_this}__col:last-child &{
+			border-bottom: 0;
+		}
+	}
+
+	&__media{
+		flex-basis: 112px;
+
+		@include mq(sm){
+			flex-basis: 186px;
+		}
+	}
+}

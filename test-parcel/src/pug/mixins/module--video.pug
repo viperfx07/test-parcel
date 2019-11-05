@@ -1,0 +1,13 @@
+mixin module--video(img, videoUrl, caption)
+	.u-myb4.c-module.c-module--video
+		.c-module__inner
+			.u-posr.c-video
+				figure
+					.u-posr.c-video__media
+						.u-embed__item.u-bgimg.js-lazysizes(data-bgset=img || "https://unsplash.it/720/520")
+						.u-embed__item.u-bgc-overlay
+						button.u-absolute-center.u-btn-unstyled(type="button", title="Play video", aria-label="Play video")
+							<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M65 35C65 51.5685 51.5685 65 35 65C18.4315 65 5 51.5685 5 35C5 18.4315 18.4315 5 35 5C51.5685 5 65 18.4315 65 35ZM70 35C70 54.33 54.33 70 35 70C15.67 70 0 54.33 0 35C0 15.67 15.67 0 35 0C54.33 0 70 15.67 70 35ZM29.1667 49.5833L43.75 35L29.1667 20.4166V49.5833Z" fill="white"/>
+							</svg>
+					figcaption.u-pyb1.u-tac #{caption || 'Video caption'}

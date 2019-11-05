@@ -1,0 +1,133 @@
+// generate font-size and line-height based on line-height in pixel
+@mixin fzlh($fz, $lh){
+	font-size: $fz;
+	line-height: ($lh / $fz);
+}
+
+@mixin h1{
+	@include fzlh(80px, 88px);
+	font-weight: 700;
+	font-family: RockebyCd;
+	text-transform: uppercase;
+	color: $tertiary6;
+}
+@mixin h2{
+	@include fzlh(60px, 54px);
+	font-weight: 700;
+	font-family: RockebyCd;
+	text-transform: uppercase;
+	color: $tertiary6;
+}
+@mixin h3{
+	@include fzlh(48px, 44px);
+	font-weight: 700;
+	font-family: RockebyCd;
+	text-transform: uppercase;
+	color: $tertiary6;
+}
+@mixin h4{
+	@include fzlh(36px, 36px);
+	font-weight: 700;
+	font-family: RockebyCd;
+	text-transform: uppercase;
+	color: $tertiary6;
+
+}
+@mixin h5{
+	@include fzlh(28px, 32px);
+	font-weight: 700;
+	font-family: RockebyCd;
+	text-transform: uppercase;
+	color: $tertiary6;
+}
+@mixin h6{
+	@include fzlh(21px, 24px);
+	font-weight: 700;
+	font-family: RockebyCd;
+	text-transform: uppercase;
+	color: $tertiary6;
+}
+
+@mixin fsleadlarge{
+	@include fzlh(28px, 36px);
+}
+
+@mixin fslead{
+	@include fzlh(20px, 28px);
+}
+
+@mixin fscaption{
+	@include fzlh(13px, 20px);
+	font-family: "Open Sans"
+}
+
+@mixin fsbodylarge{
+	@include fzlh(24px, 36px);
+}
+
+@mixin fsbodyregular{
+	@include fzlh(18px, 28px);
+}
+
+@mixin fslabel{
+	font-family: "Open Sans";
+	font-weight: 700;
+}
+
+@mixin fsinputsmall{
+	@include fzlh(15px, 24px);
+	font-family: "Open Sans";
+}
+
+@mixin fsbodyregularsmall{
+	@include fzlh(16px, 24px);
+}
+
+@mixin fsformxsmall{
+	@include fzlh(10px, 16px);
+	font-family: "Open Sans";
+}
+@mixin fsformlarge{
+	@include fzlh(18px, 24px);
+	font-family: "Open Sans";
+}
+
+@mixin fsoverline{
+	@include fzlh(14px, 20px);
+	font-family: RockebyCd;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+@mixin fsnavprimary{
+	@include fzlh(25px, 36px);
+	font-family: RockebyCd;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+@mixin fsnavsecondary{
+	@include fzlh(20px, 28px);
+	font-family: RockebyCd;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+
+@mixin fsbtnlarge{
+	@include fzlh(20px, 29px);
+	font-family: RockebyCd;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+@mixin fsbtn{
+	@include fzlh(16px, 24px);
+	font-family: RockebyCd;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}

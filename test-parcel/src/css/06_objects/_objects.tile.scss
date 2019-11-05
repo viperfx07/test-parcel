@@ -1,0 +1,16 @@
+.o-tile{
+	$_this: &;
+
+	@include mq(md){
+		height: 740px;
+	}
+
+	&__media{
+		transition: .3s;
+		transform: scale(1.24) skewY($theme-angle);
+	}
+
+	&__mediacontainer{
+		transform: skewY(-$theme-angle);
+	}
+}

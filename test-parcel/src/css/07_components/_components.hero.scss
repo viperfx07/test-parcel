@@ -1,0 +1,66 @@
+/* crit:start */
+.c-hero{
+	$_this: &;
+
+	$hero_heights: (
+		xs: 400px,
+		sm: 460px,
+		md: 600px,
+		lg: 700px,
+	);
+
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		$header-height: map-get($header-heights, $breakpoint);
+		$hero-height: map-get($hero-heights, $breakpoint);
+		@include mq-up($breakpoint) {
+			height: $hero-height;
+			@if($header-height != null){
+				margin-top: -$header-height;
+			}
+		}
+	}
+
+	@include mq(2000px){
+		height: 940px
+	}
+
+	.c-climb &{
+		// 100vh + triangle height + prices height + book now btn height
+		height: calc(100vh + (#{tan($theme-angle) * 100}vw) + 68px + 56px);
+
+		// 100vh + triangle height + prices height
+		@include mq(lg){
+			height: calc(100vh + (#{tan($theme-angle) * 100}vw) + 68px);
+		}
+	}
+
+	.c-home &{
+		height: calc(100vh + (#{tan($theme-angle) * 100}vw));
+		@include mq(lg){
+			margin-bottom: 60px;
+		}
+	}
+
+	&__media{
+		height: 100%;
+		will-change: transform;
+	}
+
+
+	&__scrollindicator{
+		&-icon{
+			top: 38%;
+		}
+	}
+
+	&__fg{
+		&-inner{
+			#{$_this}--fullvh &{
+				@include mq-down(xs) {
+					height: calc(100vh - 56px)
+				}
+			}
+		}
+	}
+}
+/* crit:end */

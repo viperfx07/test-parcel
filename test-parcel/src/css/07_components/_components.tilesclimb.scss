@@ -1,0 +1,155 @@
+.c-tilesclimb{
+	$_this: &;
+
+	&__group{
+		&#{&}{
+			margin-left: -8px;
+			margin-right: -8px;
+		}
+		@include mq-down(xs){
+			&:not(:last-child){
+				padding-bottom: 0 !important;
+			}
+			&:not(:first-child){
+				margin-top: calc(#{percentage(tan($theme-angle) / -1)}) !important;
+			}
+		}
+	}
+
+	&__media{
+		padding-bottom: 0;
+
+		&-item{
+			transition: .3s;
+
+			#{$_this}__item:hover &{
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	&__item{
+		transition: .5s;
+
+		&#{&}{
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		@include mq(sm){
+			height: 356px;
+		}
+
+		@include mq(sm){
+			height: 472px;
+		}
+
+		@include mq(lg){
+			height: 636px;
+		}
+
+		&:hover{
+			flex-grow: 0;
+			flex-shrink: 0;
+			max-width: 37%;
+			flex-basis: 37%;
+		}
+
+		&-4 {
+			$_breakpoints: (sm, md, lg);
+			@for $index from 1 to 4 {
+				@each $breakpoint in $_breakpoints{
+					$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+					$container-width: map-get($container-max-widths, $breakpoint) - $grid-gutter-width;
+					@include mq-up($breakpoint) {
+						$a: ($container-width / 4);
+						$b: tan(rad($theme-angle));
+						$c: 4 - $index;
+
+						$y: calc(#{$a * $b * $c});
+
+						&:nth-child(#{$index}){
+							margin-top: $y;
+						}
+					}
+				}
+			}
+		}
+
+		&-3 {
+			$_breakpoints: (sm, md, lg);
+			@for $index from 1 to 3 {
+				@each $breakpoint in $_breakpoints{
+					$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+					$container-width: map-get($container-max-widths, $breakpoint) - $grid-gutter-width;
+					@include mq-up($breakpoint) {
+						$a: ($container-width / 3);
+						$b: tan(rad($theme-angle));
+						$c: 3 - $index;
+
+						$y: calc(#{$a * $b * $c});
+
+						&:nth-child(#{$index}){
+							margin-top: $y;
+						}
+					}
+				}
+			}
+
+			&:hover{
+				flex-grow: 0;
+				flex-shrink: 0;
+				max-width: 40%;
+				flex-basis: 40%;
+			}
+		}
+
+		&-2 {
+			$_breakpoints: (sm, md, lg);
+			@for $index from 1 to 2 {
+				@each $breakpoint in $_breakpoints{
+					$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+					$container-width: map-get($container-max-widths, $breakpoint) - $grid-gutter-width;
+					@include mq-up($breakpoint) {
+						$a: ($container-width / 2);
+						$b: tan(rad($theme-angle));
+						$c: 2 - $index;
+
+						$y: calc(#{$a * $b * $c});
+
+						&:nth-child(#{$index}){
+							margin-top: $y;
+						}
+					}
+				}
+			}
+
+			&:hover{
+				flex-grow: 0;
+				flex-shrink: 0;
+				max-width: 55%;
+				flex-basis: 55%;
+			}
+		}
+	}
+
+	&__fg{
+		&-inner{
+			@include mq(sm) {
+				max-width: 130px;
+			}
+			
+			@include mq(md) {
+				max-width: 160px;
+			}
+
+			@include mq(lg){
+				margin-bottom: 82px;
+				max-width: 247px;
+			}
+		}
+		&-title{
+
+		}
+	}
+}

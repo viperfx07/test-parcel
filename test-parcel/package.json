@@ -1,0 +1,33 @@
+{
+  "name": "test-parcel",
+  "version": "1.0.0",
+  "description": "test parcel",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel src\\index.pug -d ../www_shared/",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build src\\index.pug -d ../www_shared/"
+  },
+  "devDependencies": {
+    "pug": "^2.0.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "foldero": "^0.1.1",
+    "hamburgers": "^1.1.3",
+    "node-sass": "4.13.0",
+    "node-sass-magic-importer": "^5.3.2",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-bundle-manifest": "^0.2.0",
+    "parcel-plugin-static-files-copy": "^2.2.1",
+    "parcel-plugin-structurize": "^1.1.5",
+    "parcel-plugin-svg-sprite": "^1.4.1",
+    "pug-include-glob": "^0.4.2",
+    "slick-carousel": "^1.8.1"
+  },
+  "staticFiles": {
+    "staticPath": "src/static",
+    "watcherGlob": "**"
+  }
+}

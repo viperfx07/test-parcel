@@ -1,0 +1,38 @@
+.c-testimonial{
+	height: 460px;
+
+	&__scrim-bot{
+		height: 79px;
+
+		@include mq(sm){
+			height: 119px;
+		}
+		@include mq(lg){
+			height: 147px;
+		}
+		@include mq(xl){
+			height: 171px;
+		}
+	}
+
+	@include mq(md){
+		height: 600px;
+	}
+
+	@include mq(lg){
+		height: 740px;
+	}
+
+	@include mq(2000px){
+		height: 940px;
+	}
+
+	&__media{
+		height: 100%;
+		padding-bottom: 0;
+
+		&-img{
+			filter: grayscale(1);
+		}
+	}
+}

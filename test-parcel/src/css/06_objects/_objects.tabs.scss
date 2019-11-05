@@ -1,0 +1,59 @@
+.o-tabs {
+	$_this: &; // {{ .o-tabs__nav }}
+	// Settings
+	$tabnav-highlight-height: 4px;
+	$tabcontent-bgcolor: #fff;
+
+	// {{ .o-tabs__pane }}
+	&__pane {
+		&:not(.active) {
+			display: none;
+		}
+	}
+
+	&__nav{
+		&-link{
+			&.active{
+				color: $text;
+			}
+		}
+	}
+
+	&__indicator{
+		/* crit:start */
+		transform: translateY(4px);
+		/* crit:end */
+		height: 3px;
+		transition: .3s;
+
+		#{$_this}__nav-link:hover &,
+		#{$_this}__nav-link:focus &{
+			transform: none;
+			opacity: .75;
+		}
+
+		.active &{
+			transform: none;
+		}
+	}
+
+	// {{ .o-tabs__img }}
+	&__img {
+		padding-bottom: percentage(282/421);
+	}
+
+	// {{ .o-tabs__content }}
+	&__content {
+		// border: 1px solid $border;
+		border-top: 0;
+		background-color: $tabcontent-bgcolor;
+		/* crit */
+
+		// {{ .o-tabs__content-table }}
+		&-table {
+			@include mq-down(sm) {
+				display: block;
+			}
+		}
+	}
+}

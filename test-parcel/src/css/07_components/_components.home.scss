@@ -1,0 +1,38 @@
+.c-home{
+	$_this: &;
+	&__quicklinks{
+		&-item{
+			#{$_this}__quicklinks-col:last-child &{
+				border-right: 0;
+			}
+		}
+
+		&-media, &-content {
+			@include mq(md) {
+				margin-bottom: auto;
+			}
+		}
+	}
+
+	&__explore{
+		&-btn{
+			transform: translate(-50%, 16px);
+		}
+	}
+
+	&__areyou{
+		&-item{
+			&:nth-child(even){
+				border-right: 0;
+			}
+
+			&:nth-last-child(-n+2){
+				border-bottom: 0;
+			}
+		}
+	}
+
+	&__climbmobiletile{
+		height: 352px;
+	}
+}

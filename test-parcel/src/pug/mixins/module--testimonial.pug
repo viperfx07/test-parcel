@@ -1,0 +1,24 @@
+mixin module--testimonial()
+	.u-myb4.c-module.c-module--testimonial
+		.c-module__inner
+			.u-posr.c-testimonial
+				.u-ovh.u-h100p
+					.u-embed.c-testimonial__media
+						.u-embed__item.u-bgimg.c-testimonial__media-img.js-lazysizes(data-bgset="https://unsplash.it/2000/1125")
+						.u-embed__item.u-bg-scrim-flat2
+						.u-posa.u-b0.u-l0.u-r0.u-w100p.u-bg-scrim-gradient.c-testimonial__scrim-bot
+				+triangle('trbl', 'fff').u-posa.u-t0.u-l0.u-w100p
+				+triangle('tlbr', 'fff').u-posa.u-b0.u-l0.u-w100p
+				.u-c-fff.u-posa.u-t0.u-b0.u-l0.u-w100p.c-testimonial__fg
+					.u-h100p(data-module="slickjs", data-module-options="{ dots: true, arrows: false }")
+						each item in [1,2,3,4]
+							.slick-slide.container.u-df.u-fxdc.justify-content-center
+								.row
+									.col-sm-8.offset-sm-2
+										.u-tac
+											<svg class="u-mbb3" width="47" height="40" viewBox="0 0 47 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0938 29.8667C19.0938 24.5333 15.8892 21.2 10.9489 21.2C10.1477 21.2 9.74716 21.2 9.34659 21.6C9.34659 16.4 14.821 9.73333 21.0966 4.93333L16.5568 0C10.5483 4.13334 0 14.1333 0 27.4667C0 35.8667 3.4716 40 9.21307 40C14.9546 40 19.0938 35.6 19.0938 29.8667ZM44.9972 29.8667C44.9972 24.5333 41.7926 21.2 36.8523 21.2C36.0511 21.2 35.6506 21.2 35.25 21.6C35.25 16.4 40.7244 9.73333 47 4.93333L42.4602 0C36.4517 4.13334 25.9034 14.1333 25.9034 27.4667C25.9034 35.8667 29.375 40 35.1165 40C40.8579 40 44.9972 35.6 44.9972 29.8667Z" fill="#F9BB34"/>
+											</svg>
+											.h4.h3-md.h2-lg.u-c-inherit.u-mbb2.u-mbb3p5-sm Amazing - and conquered my fear of heights #{item}
+											.caption.u-mbb2p5 Name location
+											a(href="#").u-dib.o-btn.o-btn--bgc-transparent.o-btn--c-fff.o-btn--bd-currentColor Read

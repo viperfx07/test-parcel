@@ -1,0 +1,34 @@
+[
+	{
+		"icon": "traveller36",
+		"text": "A tourist/visitor"
+	},
+	{
+		"icon": "group36",
+		"text": "A group"
+	},
+	{
+		"icon": "business36",
+		"text": "A business"
+	},
+	{
+		"icon": "teacher36",
+		"text": "A teacher"
+	},
+	{
+		"icon": "gift36",
+		"text": "A gift giver"
+	},
+	{
+		"icon": "media36",
+		"text": "Media"
+	},
+	{
+		"icon": "agent36",
+		"text": "An agent"
+	},
+	{
+		"icon": "lost36",
+		"text": "Lost...?"
+	}
+]

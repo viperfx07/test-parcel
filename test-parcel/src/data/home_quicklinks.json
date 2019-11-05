@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Access Map",
+		"text": "Coming to BridgeClimb",
+		"icon": "map36"
+	},
+	{
+		"title": "Weather",
+		"text": "17° Sunny",
+		"icon": "weather36"
+	},
+	{
+		"title": "Ticket prices",
+		"text": "From $188",
+		"icon": "tickets36"
+	},
+	{
+		"title": "Opening times",
+		"text": "9am - 6pm",
+		"icon": "time36"
+	}
+]

@@ -1,0 +1,123 @@
+.o-richtext {
+    >*:last-child:not(.lead):not(.b-lead) {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 18px;
+        &:not(:first-child) {
+            margin-top: 36px;
+        }
+
+        & 
+        + h1:not(:first-child),
+        + h2:not(:first-child),
+        + h3:not(:first-child),
+        + h4:not(:first-child),
+        + h5:not(:first-child),
+        + h6:not(:first-child) {
+            margin-top: 18px;
+        }
+
+        a {
+            color: $tertiary6;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    h2 {
+        @include h4;
+    }
+    h3 {
+        @include h5;
+    }
+    h4 {
+        @include h6;
+    }
+    img {
+        margin: 0 0 24px;
+        &[style*="float:left"],
+        &[style*="float: left"] {
+            margin: 0 24px 24px 0;
+        }
+        &[style*="float:right"],
+        &[style*="float: right"] {
+            margin: 0 0 24px 24px;
+        }
+        @include mq-down(xs) {
+            float: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            display: block;
+        }
+    }
+    table {
+        margin-bottom: 24px;
+    }
+    ul,
+    ol {
+        padding-left: 0;
+        margin-bottom: 24px;
+    }
+    a {
+        text-decoration: underline;
+        &.o-btn {
+            text-decoration: none;
+        }
+    }
+    ul:not(.tablesaw-advance-dots) {
+        list-style: none;
+        li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 4px;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 16px;
+                top: 8px;
+                width: 6px;
+                height: 6px;
+                background-color: $tertiary6;
+                border-radius: 50%;
+            }
+            &[style*="list-style: none"]:before {
+                content: none;
+            }
+        }
+    }
+    ol {
+        // @include u-list-unstyled;
+        counter-reset: styledol;
+        li {
+            display: flex;
+            margin-bottom: 8px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:before {
+                @include fscaption;
+                content: counter(styledol);
+                counter-increment: styledol;
+                background-color: $secondary;
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                color: #fff;
+                text-align: center;
+                flex-shrink: 0;
+                margin-right: 8px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

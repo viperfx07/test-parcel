@@ -1,0 +1,64 @@
+.c-footer {
+	$_this: &;
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 20px;
+    &__angle {
+        transform: skewY(-$theme-angle);
+        transform-origin: bottom right;
+        background-color: #131518;
+        width: 100%;
+        overflow: hidden;
+        // fix imperfect alignment of css elements - small white triangle on the right of the footer angle
+        margin-bottom: -1px;
+    }
+    &__inner {
+        padding-bottom: 104px;
+        background: #131518;
+    }
+    &__social {
+        &-icon {
+            width: 28px;
+            height: 28px;
+            opacity: inherit;
+        }
+        &-link {
+            transition: .3s;
+            &:hover,
+            &:focus {
+                opacity: .7;
+
+				& ~ #{$_this}__social-qrcode{
+					display: block;
+				}
+            }
+		}
+
+		&-qrcode{
+			&--wechat{
+				bottom: 40px;
+				max-width: 120px;
+			}
+		}
+    }
+    &__form {
+        &-toggle {
+            height: 48px;
+            line-height: 48px;
+            &:focus {
+                opacity: .8;
+            }
+        }
+    }
+    &__copy {
+        font-size: 16px;
+        line-height: 28px;
+        a {
+            color: inherit;
+            &:hover,
+            &:focus {
+                color: inherit;
+            }
+        }
+    }
+}

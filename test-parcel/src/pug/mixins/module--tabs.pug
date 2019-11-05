@@ -1,0 +1,25 @@
+mixin module--tabs(data)
+	- data = data || site.data.moduletabs
+	// Tabs become accordion on mobile
+	section.u-myb4.c-module.c-module--tabs&attributes(attributes)
+		.c-module__inner
+			.container
+				.row
+					.col-md-10.offset-md-1.col-lg-8.offset-lg-2
+						// tab id must be unique
+						.o-tabs(id="tab1")
+							// Nav tabs
+							.u-ova
+								.nav.u-c-tertiary5.u-df.o-tabs__nav(role='tablist')
+									each item, i in data
+										a.u-fw700.u-posr.u-ovh.u-link-colorstay.u-link-tdn.u-focus-outline0.u-mrb3.u-mrb0-last.u-pbb1.o-tabs__nav-link(href='#tab1-pane' + i, aria-controls='tab1-pane' + i, role='tab', data-toggle='tab', aria-selected=i==0?'true':'false', class=i==0?'active': '')
+											span.o-tabs__nav-linktext=item.text
+											span.u-posa.u-l0.u-b0.u-bgc-primary.u-w100p.o-tabs__indicator
+
+							.tab-content.u-pyb2p5.o-tabs__content
+								// Tab panes
+								each item, i in data
+									.tab-pane.u-w100p.u-c-tertiary5.o-tabs__pane(role='tabpanel', id='tab1-pane'+ i, class=i == 0 ? 'active' : '')
+										.o-tabs__text
+											.o-richtext
+												p #{i} Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor.

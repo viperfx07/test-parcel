@@ -1,0 +1,15 @@
+mixin module--pagetitleintro(title, intro, breadcrumb)
+	.u-mbb3.c-module.c-module__pagetitleintro
+		.c-module__inner
+			.container
+				.row
+					.col-md-10.offset-md-1.col-lg-8.offset-lg-2
+						.u-pbb2p5.u-bdbw2.u-bdc-text
+							.u-mbb2.o-breadcrumb
+								.o-breadcrumb__item
+									+icon('chevron-left12').o-icon--xs.u-vam.u-mrb1.u-fill-secondary
+									a.u-link-colorstay.u-vam.caption(href="#") #{breadcrumb || 'Parent page label'}
+
+							.u-tac-md
+								h1.u-mbb1p5 #{title || 'Page title'}
+								.lead #{intro || 'Introduction paragraph Curabitur blandit tempus porttitor. Donec ullamcorper nulla.'}

@@ -1,0 +1,8 @@
+mixin inputbox(id, type, label)
+	- type = type || 'checkbox'
+	label.u-df.u-fw400.o-inputbox(for=id, class=(type=='radio' ? 'o-inputbox--radio' : ''))&attributes(attributes)
+		input.sr-only(id=id, type=type)
+		span.u-db.u-posr.u-tac.u-fxs0.u-mrb2.o-inputbox__box(aria-hidden="true")
+			+icon('check16').u-absolute-center.o-icon--s.u-fill-fff.u-o0.o-inputbox__tick
+			span.u-dn.u-absolute-center.u-w8.u-h8.u-bdra50p.u-bgc-fff.u-o0.o-inputbox__tick.o-inputbox__tick--circle
+		span.o-inputbox__text=label

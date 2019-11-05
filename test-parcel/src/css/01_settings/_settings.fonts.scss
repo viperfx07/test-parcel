@@ -1,0 +1,54 @@
+// @font-face {
+//   font-family: "HaboroSlab-NorBol";
+//   src: url("webfonts/39B8D0_0_0.eot");
+//   src: url("webfonts/39B8D0_0_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_0_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_0_0.woff") format("woff"),
+//     url("webfonts/39B8D0_0_0.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "HaboroSlab-NorBolIt";
+//   src: url("webfonts/39B8D0_1_0.eot");
+//   src: url("webfonts/39B8D0_1_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_1_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_1_0.woff") format("woff"),
+//     url("webfonts/39B8D0_1_0.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "HaboroSlab-NorReg";
+//   src: url("webfonts/39B8D0_2_0.eot");
+//   src: url("webfonts/39B8D0_2_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_2_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_2_0.woff") format("woff"),
+//     url("webfonts/39B8D0_2_0.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "HaboroSlab-NorRegIt";
+//   src: url("webfonts/39B8D0_3_0.eot");
+//   src: url("webfonts/39B8D0_3_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_3_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_3_0.woff") format("woff"),
+//     url("webfonts/39B8D0_3_0.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "RockebyCd-Bold";
+//   src: url("webfonts/39B8D0_4_0.eot");
+//   src: url("webfonts/39B8D0_4_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_4_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_4_0.woff") format("woff"),
+//     url("webfonts/39B8D0_4_0.ttf") format("truetype");
+// }
+
+
+// used by generic
+$fonts: (
+	(name: 'HaboroSlab', path: '/fonts/39B8D0_2_0', weight: 400, style: normal),
+	(name: 'HaboroSlab', path: '/fonts/39B8D0_3_0', weight: 400, style: italic),
+	(name: 'HaboroSlab', path: '/fonts/39B8D0_0_0', weight: 700, style: normal),
+	(name: 'HaboroSlab', path: '/fonts/39B8D0_1_0', weight: 700, style: italic),
+	(name: 'RockebyCd', path: '/fonts/39B8D0_4_0', weight: 700, style: normal),
+);

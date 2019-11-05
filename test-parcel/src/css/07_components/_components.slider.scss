@@ -1,0 +1,35 @@
+.c-slider{
+	&__slider{
+		&-slidescrim{
+			transition: opacity .3s .1s, z-index .1s;
+			.slick-current &{
+				transition: opacity .3s, z-index .1s .3s;
+				z-index: -1;
+				opacity: 0;
+			}
+		}
+
+		ul.slick-dots{
+			background: linear-gradient(transparent, rgba(0,0,0,0.75));
+			bottom: 0;
+			height: 50px;
+			padding-top: 15px;
+			pointer-events: none;
+
+			@include mq(sm) {
+				height: 60px;
+			}
+
+			li {
+				pointer-events: all;
+			}
+		}
+	}
+
+	&__slide{
+		.c-module .c-module--slider &{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}

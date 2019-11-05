@@ -1,0 +1,27 @@
+mixin tiles(items)
+	-var DEG = 5;
+	-var GAP= 24;
+	-var percentageOnTan = Math.tan(DEG * Math.PI/180) * 100
+	-var pt = `calc(${percentageOnTan / 2}% / ${items.length})`
+	//- padding bottom is padding-top + the-last-transform
+	//- -var pb = `calc((${percentageOnTan / 2}% / ${items.length}) + (((100vw - (${GAP}px * ${items.length-1}) ) / ${items.length}) * ${Math.tan(DEG * Math.PI/180)} * ${items.length-1}))`.trim()
+
+
+	//- This calculation is more precise
+	-var pb = `calc((${percentageOnTan / 2}% / ${items.length}) + ((100vw / ${items.length}) * ${Math.tan(DEG * Math.PI/180)} * ${items.length-1}))`.trim()
+
+	.u-mbb4.u-df-sm.c-tiles(style="padding-top:" + pt + "; padding-bottom: " + pb)
+		each item,index in items
+			//- -var y = `calc(((100vw - (${GAP}px * ${items.length-1}) ) / ${items.length}) * ${Math.tan(8 * Math.PI/180)} * ${items.length-1 - index})`
+
+			//- This calculation is more precise
+			-var y = `calc((100vw / ${items.length}) * ${Math.tan(DEG * Math.PI/180)} * ${items.length-1 - index})`
+			.u-fx1.u-mbb1.u-mbb0-sm.u-mbb0-last.u-mrb1-sm.u-mrb2-md.u-mrb0-last.u-posr.c-tiles__item(style="top: " + y)
+				a(href="#").u-embed__item.u-z1
+				.c-tiles__mediacontainer
+					.u-embed.c-tiles__media
+						.u-embed__item.u-bgimg.c-tiles__media-item.js-lazysizes(data-bgset="https://unsplash.it/720/648")
+						.u-embed__item.u-bg-scrim-flat
+				.u-posa.u-t0.u-b0.u-l0.u-w100p.u-df.align-items-center.justify-content-center
+					.u-tac
+						.h4.u-c-fff.u-mbb1p5=item

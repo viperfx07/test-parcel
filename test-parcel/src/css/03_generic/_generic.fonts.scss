@@ -1,0 +1,98 @@
+/* crit:start */
+// If loading fonts from localhost/server
+// set the font files and paths in settings.fonts.scss
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3782864, 2019-07-08T22:01:43-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: HaboroSlab-NorBol by insigne
+ * URL: https://www.myfonts.com/fonts/insigne/haboro-slab/normal-bold/
+ * Copyright: Copyright (c) 2015 by Jeremy Dooley. All rights reserved.
+ * Licensed pageviews: 100,000
+ *
+ * Webfont: HaboroSlab-NorBolIt by insigne
+ * URL: https://www.myfonts.com/fonts/insigne/haboro-slab/normal-bold-italic/
+ * Copyright: Copyright (c) 2015 by Jeremy Dooley. All rights reserved.
+ * Licensed pageviews: 100,000
+ *
+ * Webfont: HaboroSlab-NorReg by insigne
+ * URL: https://www.myfonts.com/fonts/insigne/haboro-slab/normal-regular/
+ * Copyright: Copyright (c) 2015 by Jeremy Dooley. All rights reserved.
+ * Licensed pageviews: Unlimited
+ *
+ * Webfont: HaboroSlab-NorRegIt by insigne
+ * URL: https://www.myfonts.com/fonts/insigne/haboro-slab/normal-regular-italic/
+ * Copyright: Copyright (c) 2015 by Jeremy Dooley. All rights reserved.
+ * Licensed pageviews: 100,000
+ *
+ * Webfont: RockebyCd-Bold by My Creative Land
+ * URL: https://www.myfonts.com/fonts/my-creative-land/rockeby/bold/
+ * Copyright: Copyright &#xFFC2;&#xFFA9; 2017 by Elena Genova. All rights reserved.
+ * Licensed pageviews: 100,000
+ *
+ *
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3782864
+ *
+ * © 2019 MyFonts Inc
+*/
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("https://hello.myfonts.net/count/39b8d0");
+
+// @font-face {
+//   font-family: "HaboroSlab-NorBol";
+//   src: url("webfonts/39B8D0_0_0.eot");
+//   src: url("webfonts/39B8D0_0_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_0_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_0_0.woff") format("woff"),
+//     url("webfonts/39B8D0_0_0.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "HaboroSlab-NorBolIt";
+//   src: url("webfonts/39B8D0_1_0.eot");
+//   src: url("webfonts/39B8D0_1_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_1_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_1_0.woff") format("woff"),
+//     url("webfonts/39B8D0_1_0.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "HaboroSlab-NorReg";
+//   src: url("webfonts/39B8D0_2_0.eot");
+//   src: url("webfonts/39B8D0_2_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_2_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_2_0.woff") format("woff"),
+//     url("webfonts/39B8D0_2_0.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "HaboroSlab-NorRegIt";
+//   src: url("webfonts/39B8D0_3_0.eot");
+//   src: url("webfonts/39B8D0_3_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_3_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_3_0.woff") format("woff"),
+//     url("webfonts/39B8D0_3_0.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "RockebyCd-Bold";
+//   src: url("webfonts/39B8D0_4_0.eot");
+//   src: url("webfonts/39B8D0_4_0.eot?#iefix") format("embedded-opentype"),
+//     url("webfonts/39B8D0_4_0.woff2") format("woff2"),
+//     url("webfonts/39B8D0_4_0.woff") format("woff"),
+//     url("webfonts/39B8D0_4_0.ttf") format("truetype");
+// }
+
+
+@each $map in $fonts{
+  @include font-face(map-get($map, name), map-get($map, path), map-get($map, weight), map-get($map, style));
+}
+/* crit:end */

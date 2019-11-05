@@ -1,0 +1,160 @@
+/* crit:start */
+.u {
+    // Background image reset
+    // no-repeat, centered, and cover size
+    &-bgimg {
+		@include bgimg-with-ratio;
+		page-break-inside: avoid;
+
+		&__backup {
+			opacity: 0;
+			@media print {
+				opacity: 1;
+			}
+		}
+
+		&--gs {
+			filter: grayscale(100%);
+		}
+	}
+
+    // Same embed responsive as Boostrap's embed-responsive, but with BEM style syntax
+    &-embed {
+        position: relative;
+        display: block;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        padding-bottom: 100%; //by default, it's a square
+
+        &__item,
+          iframe,
+          embed,
+          object,
+          video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            border: 0;
+		}
+
+		@each $breakpoint in map-keys($grid-breakpoints) {
+			@include mq($breakpoint){
+				$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+				&--16by9#{$infix}{
+					padding-bottom: 56.25%;
+				}
+				&--4by3#{$infix}{
+					padding-bottom: 75%;
+				}
+			}
+		}
+	}
+
+	&-py-halfangle{
+		padding-top: percentage(tan($theme-angle) / 2);
+		padding-bottom: percentage(tan($theme-angle) / 2);
+	}
+
+	&-pb-fullangle{
+		padding-bottom:  percentage(tan($theme-angle));
+	}
+	&-pt-fullangle{
+		padding-top:  percentage(tan($theme-angle));
+	}
+
+	&-triangle{
+		$_this: &;
+		&__inner{
+			transform: skewY(-5deg);
+
+			#{$_this}--trbl &{
+				transform-origin: bottom left;
+			}
+			#{$_this}--tlbr &{
+				transform-origin: bottom right;
+			}
+		}
+	}
+
+	// {{ .u-table-responsive }}
+    &-table-responsive {
+    	@each $breakpoint in map-keys($grid-breakpoints) {
+    		$next: breakpoint-next($breakpoint, $grid-breakpoints);
+    		$infix: breakpoint-infix($next, $grid-breakpoints);
+    		&#{$infix} {
+    			@include media-breakpoint-down($breakpoint) {
+    				display: block;
+    				width: 100%;
+    				overflow-x: auto;
+    				-webkit-overflow-scrolling: touch;
+    				-ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+    				// Prevent double border on horizontal scroll due to use of `display: block;`
+    				>.table-bordered {
+    					border: 0;
+    				}
+    			}
+    		}
+    	}
+    }
+
+	&-vertical-center {
+        @include vertical-center;
+        /* crit */
+    }
+    &-absolute-center {
+        @include absolute-center;
+        /* crit */
+    }
+    &-horizontal-center {
+        @include horizontal-center;
+        /* crit */
+    }
+
+    // Ellipsis
+    &-ellipsis {
+        @include ellipsis;
+	}
+
+	&-fullwidthcontainer{
+		&-smdown{
+			@include mq-down(sm){
+				padding-left: 0;
+				padding-right: 0;
+				max-width: 100%;
+			}
+		}
+
+		&-xsdown{
+			@include mq-down(xs){
+				padding-left: 0;
+				padding-right: 0;
+				max-width: 100%;
+			}
+		}
+	}
+
+	&-uncollapse{
+		&-block-sm{
+			@include mq(sm){
+				display: block !important;
+				overflow: visible !important;
+			}
+		}
+		&-flex-lg{
+			@include mq(lg){
+				display: flex !important;
+				overflow: visible !important;
+			}
+		}
+	}
+
+	&-pen {
+		pointer-events: none;
+	}
+}
+/* crit:end */

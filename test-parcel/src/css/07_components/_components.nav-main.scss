@@ -1,0 +1,77 @@
+.c-nav-main {
+	$_this: &;
+
+	&__indicator{
+		height: 4px;
+		transform:scaleY(0);
+		/* crit */
+		transform-origin: top center;
+		transition: .3s;
+
+		.is-active &{
+			transform: none;
+		}
+
+		#{$_this}__link.is-open ~ &,
+		#{$_this}__link:hover ~ &,
+		#{$_this}__link:focus ~ &{
+			transform: none;
+		}
+
+		.c-nav-sub &{
+			bottom: -16px;
+		}
+
+		.c-nav-sub #{$_this}__link.is-open &,
+		.c-nav-sub #{$_this}__link:hover &,
+		.c-nav-sub #{$_this}__link:focus &{
+			transform: none;
+		}
+	}
+
+	&__subnav{
+		transition: opacity .3s, z-index .1s .3s, transform .1s .3s;
+		min-width: 200px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+		transform: scale(0);
+
+		&:empty{
+			display: none;
+		}
+
+		&.is-open{
+			transition: opacity .3s .1s, z-index .1s, transform .1s;
+			transform: none;
+			left: 0;
+			opacity: 1;
+			z-index: 5;
+		}
+
+		&-link{
+			&:hover, &:focus,
+			&.is-hover, &.is-focus{
+				background-color: rgba($tertiary5, .5);
+			}
+
+			&-text{
+				transition: .3s;
+				#{$_this}__subnav-link:hover &,
+				#{$_this}__subnav-link:focus &,
+				#{$_this}__subnav-link.is-hover &,
+				#{$_this}__subnav-link.is-focus &{
+					transform: translateX(8px)
+				}
+			}
+		}
+
+		&--lang{
+			min-width: 248px;
+			&#{&}{
+				left: auto;
+			}
+			@include mq(lg){
+				right: -48px;
+			}
+		}
+	}
+}

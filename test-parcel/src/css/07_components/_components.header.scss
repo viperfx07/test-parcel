@@ -1,0 +1,75 @@
+.c-header{
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		$header-height: map-get($header-heights, $breakpoint);
+		@if($header-height != null){
+			@include mq-up($breakpoint) {
+				height: $header-height;
+
+				&__inner{
+					height: $header-height;
+				}
+			}
+		}
+	}
+
+	&__logo{
+		&-img{
+			width: 192px;
+			transition: width 0.5s cubic-bezier(0.71, -0.01, 0.42, 0.99);
+
+			@include mq(sm){
+				width: 228px;
+			}
+			@include mq(xl){
+				width: 275px;
+				transition: width 0.75s cubic-bezier(0.56, -0.01, 0.32, 1.01);
+			}
+			.has-transition &{
+				width: 192px;
+			}
+		}
+	}
+
+	&__mobiletoggle{
+		width: 32px;
+		height: 32px;
+	}
+
+	&__inner{
+		transition: background-color .3s, transform .25s ease-in, height .5s;
+
+		&.is-unpinned{
+			transform: translateY(-100%);
+		}
+
+		&.is-pinned.is-not-top{
+			height: 88px;
+		}
+
+		&-bgc {
+			background-color: $tertiary5;
+			opacity: 0;
+			transition: opacity .3s linear;
+		}
+	}
+
+	&__container{
+		position: relative;
+		z-index: 1;
+
+		@include mq(xl){
+			max-width: 100%;
+		}
+
+		.has-transition.is-not-top & {
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+
+		&-inner{
+			.has-transition.is-not-top & {
+				align-items: center !important;
+			}
+		}
+	}
+}

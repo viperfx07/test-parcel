@@ -1,0 +1,5 @@
+mixin inputtext(id, label, type)
+	-var _type = type || 'text'
+	label.u-fw400.u-posr.o-input(for=id)&attributes(attributes)
+		input.o-input__input(type=_type, id=id, required)
+		span.u-dib.u-posa.u-t0.u-l0.u-mtb2.u-mlb2.o-input__text #{label}

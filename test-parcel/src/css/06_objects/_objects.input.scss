@@ -1,0 +1,33 @@
+    .o-input {
+    $_this: &;
+    &__text {
+        @include fzlh(16px, 24px);
+        user-select: none;
+        pointer-events: none;
+        transition: .5s;
+        #{$_this}__input:focus~&,
+        #{$_this}__input:valid~& {
+            @include fsformxsmall;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        #{$_this}__input:disabled~& {
+            color: $tertiary3;
+        }
+        #{$_this}__input.error:valid~& {
+            color: $danger;
+        }
+    }
+    &__input {
+        min-height: 56px;
+        &#{&} {
+            padding: 24px 16px 6px;
+        }
+        &:focus,
+        &:valid {
+            background-color: #fff;
+            border-color: $tertiary6;
+            outline: 0;
+        }
+    }
+}

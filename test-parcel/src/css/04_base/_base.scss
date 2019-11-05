@@ -1,0 +1,210 @@
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/* crit:start */
+
+*,
+*:before,
+*:after {
+    flex: 0 1 auto;
+}
+
+html {
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-overflow-style: scrollbar;
+    &.is-menu-active {
+        overflow: hidden;
+    }
+}
+
+body {
+    min-height: 100vh;
+    @include mq(sm) {
+        @include fsbodyregular;
+    }
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+input {
+    @include fzlh(16px, 24px);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    border-radius: 2px;
+    /* crit */
+    &[type="search"],
+    &[type="text"],
+    &[type="password"],
+    &[type="tel"],
+    &[type="number"],
+    &[type="email"] {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 16px;
+        border: 1px solid $border;
+        min-height: 56px;
+        background-color: $tertiary1;
+    }
+    &:focus {
+        background-color: #fff;
+        border-color: $tertiary6;
+        outline: 0;
+    }
+    &:disabled {
+        background-color: $tertiary1;
+        color: $tertiary3;
+    }
+    &:invalid {
+        // remove red border on invalid input on mozilla
+        box-shadow: none;
+        /* crit */
+    }
+    &::placeholder {
+        color: $tertiary3;
+        /* crit */
+    }
+    &.error {
+        border-color: $danger;
+        box-shadow: 0 0 0 1px $danger;
+    }
+    &:invalid {
+        // remove red border on invalid input on mozilla
+        box-shadow: none;
+        /* crit */
+    }
+    &::-ms-clear {
+        display: none;
+    }
+    &::-webkit-search-cancel-button {
+        display: none;
+    }
+    &:-webkit-autofill {
+        box-shadow: 0 0 0px 1000px white inset;
+    }
+}
+
+table:not(.u-table-unstyled) {
+    @include fsinputsmall;
+    font-family: "Open Sans";
+    width: 100%;
+	border: 0;
+	border-color: $border;
+    td,
+    th {
+        padding: 8px 12px;
+        max-width: 12em;
+        border-left: 0;
+        border-right: 0;
+    }
+    th {
+        color: $text;
+        text-align: left;
+    }
+    tr {
+        border-bottom: 1px solid $border;
+    }
+    thead {
+        tr {
+            border-top: 3px solid $tertiary6;
+            border-bottom: 1px solid $tertiary6;
+        }
+    }
+}
+
+select,
+textarea {
+    @include fzlh(16px, 24px);
+    // Prevent ios default box shadow and radius
+    appearance: none;
+    border-radius: 2px;
+    display: block;
+    padding: 16px;
+    width: 100%;
+    background-color: $tertiary1;
+    border: 1px solid $border;
+    font-family: "Open Sans";
+    &:focus {
+        background-color: #fff;
+        border-color: $tertiary6;
+        outline: 0;
+    }
+    &:disabled {
+        background-color: $tertiary1;
+        color: $tertiary3;
+    }
+    &:invalid {
+        // remove red border on invalid input on mozilla
+        box-shadow: none;
+        /* crit */
+    }
+    &::placeholder {
+        color: $tertiary3;
+        /* crit */
+    }
+    &:-webkit-autofill {
+        box-shadow: 0 0 0px 1000px white inset;
+    }
+    &.error {
+        border-color: $danger;
+        box-shadow: 0 0 0 1px $danger;
+    }
+}
+
+select {
+    padding-right: 32px;
+    // background: #fff url('/www_shared/assets/img/caret-down.svg') calc(100% - 10px) 50% no-repeat;
+    background-size: 24px auto;
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+    resize: vertical;
+}
+
+figure {
+    margin-bottom: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: $border;
+    margin: 32px 0;
+}
+
+
+/* crit:end */

@@ -1,0 +1,72 @@
+//- Custom Configuration
+block config
+	//- Setup site's base URL to match the "baseUrl" key within `package.json`
+	//- Otherwise default to relative pathing
+	//- - var baseUrl = config.baseUrl || './'
+	//- - var assetsDir = config.directories.assets
+	//- - var cssDir = assetsDir + '/' + config.directories.styles.replace(/^_/, "")
+	//- - var jsDir = assetsDir + '/' + config.directories.scripts.replace(/^_/, "")
+
+block childConfig
+
+block includes
+	//- include ../mixins/*.pug
+
+
+doctype
+<!--[if IE 8]>
+<html class="no-js lt-ie10 lt-ie9">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js lt-ie10">
+<![endif]-->
+!= "<!--[if gt IE 9]><!-->"
+html.no-js
+	!= "<!--<![endif]-->"
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+		meta(content="Description",name="description")
+		meta(content="#404451", name="theme-color")
+
+		//-# Mobile Viewport Scaling
+		meta(content="True",name="HandheldFriendly")
+		meta(content="320",name="MobileOptimized")
+		meta(content="width=device-width,initial-scale=1",name="viewport")
+		meta(content="no",name="user-scalable")
+		//-#
+
+
+		title BridgeClimb
+
+		link(rel="preconnect", href="https://cdn.jsdelivr.net/")
+		link(rel="preconnect", href="https://cdn.polyfill.io/")
+		link(rel="preconnect", href="https://fonts.googleapis.com/")
+		link(rel="dns-prefetch", href="https://cdn.jsdelivr.net/")
+		link(rel="dns-prefetch", href="https://cdn.polyfill.io/")
+		link(rel="dns-prefetch", href="https://fonts.googleapis.com/")
+		//- link(rel="preload" href="/www_shared/assets/img/pageloader.gif" as="image")
+		//- Icons
+		//- link(rel='icon', type="image/x-icon", href='/favicon.ico')
+		//- link(rel='apple-touch-icon', href="/apple-touch-icon.png")
+
+		//- CSS
+		// Critical CSS
+		// TODO: Critical CSS needs to be
+		// 1. Loaded by back-end script
+		// 2. Loaded once before main.css is cached
+		// ref: https://iamsteve.me/blog/entry/using-cookies-to-serve-critical-css-for-first-time-visits
+		style(id="boilerplatev-crit-css")
+		// END Critical CSS
+		link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet" media="print" onload="this.media = 'all'")
+		link(href='css/main.scss' rel="stylesheet" media="print" onload="this.media = 'all'")
+		
+	body.u-df.u-fxdc(class=bodyClass)
+		block barecontent
+
+		script(defer src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,matchMedia,modernizr:placeholder,Array.prototype.includes,Array.prototype.find,Array.prototype.findIndex,Array.from,Element.prototype.dataset")
+		script(defer src="https://cdn.jsdelivr.net/combine/npm/svg4everybody@2.1.9/dist/svg4everybody.min.js,npm/jquery@3/dist/jquery.min.js,npm/vue@2.5.22/dist/vue.js")
+
+		//- how to make it read the arguments
+		script(defer src='js/main.js')

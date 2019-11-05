@@ -1,0 +1,12 @@
+/* crit:start */
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+/* crit:end */
+
+.hamburger-inner{
+	.hamburger.is-active &{
+		background-color: $text;
+		&:before, &:after{
+			background-color: $text;
+		}
+	}
+}

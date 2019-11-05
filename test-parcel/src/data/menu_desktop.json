@@ -1,0 +1,112 @@
+[
+	{
+		"text": "Climbs & Prices",
+		"href": "climb.html",
+		"submenu": [
+			{
+				"text": "Summit",
+				"href": "landing.html"
+			},
+			{
+				"text": "Summit Express",
+				"href": "landing.html"
+			},
+			{
+				"text": "Sampler",
+				"href": "landing.html"
+			},
+			{
+				"text": "Vivid",
+				"href": "landing.html"
+			},
+			{
+				"text": "Other Climbs",
+				"href": "landing.html"
+			},
+			{
+				"text": "Compare",
+				"href": "landing.html"
+			},
+			{
+				"text": "Prices",
+				"href": "landing.html"
+			}
+		]
+	},
+	{
+		"text": "Explore",
+		"href": "explore.html",
+		"submenu": [
+			{
+				"text": "Summit",
+				"href": "landing.html"
+			},
+			{
+				"text": "Summit Express",
+				"href": "landing.html"
+			},
+			{
+				"text": "Sampler",
+				"href": "landing.html"
+			},
+			{
+				"text": "Vivid",
+				"href": "landing.html"
+			},
+			{
+				"text": "Other Climbs",
+				"href": "landing.html"
+			},
+			{
+				"text": "Compare",
+				"href": "compare.html"
+			},
+			{
+				"text": "Prices",
+				"href": "landing.html"
+			}
+		]
+	},
+	{
+		"text": "Plan your visit",
+		"href": "landing.html",
+		"submenu": [
+			{
+				"text": "Summit",
+				"href": "landing.html"
+			},
+			{
+				"text": "Summit Express",
+				"href": "landing.html"
+			},
+			{
+				"text": "Sampler",
+				"href": "landing.html"
+			},
+			{
+				"text": "Vivid",
+				"href": "landing.html"
+			},
+			{
+				"text": "Other Climbs",
+				"href": "landing.html"
+			},
+			{
+				"text": "Compare",
+				"href": "landing.html"
+			},
+			{
+				"text": "Prices",
+				"href": "landing.html"
+			}
+		]
+	},
+	{
+		"text": "Gift Ideas",
+		"href": "giftcards.html"
+	},
+	{
+		"text": "Groups",
+		"href": "landing.html"
+	}
+]

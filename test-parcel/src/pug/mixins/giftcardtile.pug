@@ -1,0 +1,40 @@
+mixin giftcardtile(item, parent)
+	.u-posr.u-c-fff.o-giftcardtile
+		button.collapsed.u-btn-unstyled.u-embed__item.u-z1.o-giftcardtile__expander(
+			type="button"
+			title="Create gift vouchers"
+			data-toggle="collapse"
+			data-target="#tile-"+item.title.replace(/\ /g, '').toLowerCase()
+		)
+			span.u-db.u-h100p.u-w100p(tabindex="-1")
+		.u-posr.o-giftcardtile__tile
+			.u-embed.u-embed--4by3.u-bgimg.js-lazysizes(data-bgset="https://unsplash.it/800/600")
+				img.u-bgimg__backup.js-lazysizes(data-src="https://unsplash.it/800/600")
+				.u-embed__item.u-bg-scrim-gradient2
+			.u-embed__item.u-plb2p5.u-pbb2p5.u-prb2.u-df.u-fxdc.justify-content-end
+				.h4.u-c-inherit.u-mbb1 #{item.title}
+				.u-df.justify-content-between.align-items-end
+					.u-mrb2
+						- if (item.priceAdult)
+							.u-df
+								.u-prb2.o-giftcardtile__price(class=item.priceChild ? 'u-bdr u-mrb2' : '')
+									.h5.u-c-inherit #{item.priceAdult}
+									.u-fsi Adult
+								-if (item.priceChild)
+									.u-prb2.o-giftcardtile__price
+										.h5.u-c-inherit #{item.priceChild}
+										.u-fsi Child
+
+						- else
+							.h6.u-c-inherit Gift vouchers
+					.u-c-inherit
+						.u-dn.o-giftcardtile__expandindicator.o-giftcardtile__expandindicator--collapsed
+							+icon('plus')
+						.o-giftcardtile__expandindicator.o-giftcardtile__expandindicator--expanded
+							+icon('minus')
+		.collapse.u-posr.u-z1.o-giftcardtile__expand(id="tile-"+item.title.replace(/\ /g, '').toLowerCase(), data-parent=parent)
+			.container-fluid.u-c-tertiary6
+				div(data-module="loadcontainer" data-module-options="{ name: 'ContainerGiftCardTileCreateVoucher', props: { tileId: 'x' } }")
+
+
+

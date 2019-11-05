@@ -1,0 +1,63 @@
+.u-embed.u-pb-fullangle.c-footer__angle
+
+.u-ptb8.u-ptb5-sm.c-footer__inner
+	.container
+		.row
+			.col-12.col-sm-6.col-lg-4.u-mbb7
+				.h6.h5-sm.u-c-inherit.u-mbb1p5 Visit Us
+				p.u-mbb1p5.u-c-tertiary3.c-footer__copy
+					|3 Cumberland St,
+					br
+					|The Rocks NSW 2000
+					br
+					a.u-link-colorstay(href="tel:+61 (2) 8274 7777") +61 (2) 8274 7777
+					br
+					a.u-link-colorstay(href="mailto:admin@bridgeclimb.com") admin@bridgeclimb.com
+				a.u-link-colorstay.c-footer__links(href="#")
+					+icon('map').u-vam.u-mrb1.u-fill-cc
+					span.u-vam Access Map
+
+			.col-12.col-sm-6.col-lg-4.u-mbb7
+				.h6.h5-sm.u-c-inherit.u-mbb1p5 Go To
+				nav.row
+					each item in site.data.footermenu
+						.u-mbb1.col-6
+							a.u-link-colorstay.c-footer__link(href=item.href)
+								+icon('arrow-right').u-fill-cc.u-vam.u-mrb1p5
+								span.u-vam #{item.text}
+
+			.col-lg-4.u-mbb4p5.u-mbb7-md
+				.u-mbb4.u-mbb5p5-lg.c-footer__form
+					.h6.h5-sm.u-c-inherit.u-mbb1p5 Newsletter
+					.u-bdw2.u-bdc-fff.u-c-fff
+						button.collapsed.u-btn-unstyled.u-c-inherit.u-focus-outline0.u-df.u-w100p.u-pxb2.justify-content-between.align-items-center.c-footer__link.c-footer__form-toggle(data-toggle="collapse", data-target="#footer-newsletter")
+							span.u-dib.u-lh1 Sign up now
+							+icon('chevron-up').u-fill-cc.u-dn-on-collapsed
+							+icon('chevron-down').u-fill-cc.u-dn.u-db-on-collapsed
+						#footer-newsletter.collapse
+							form.u-c-text.u-pbb2.u-pxb2(novalidate)
+								+inputtext('newsletter-firstname', 'First name *').u-db.u-mbb1.u-mbb0-last
+								+inputtext('newsletter-lastname', 'Last name *').u-db.u-mbb1.u-mbb0-last
+								+inputtext('newsletter-email', 'Email address *', 'email').u-db.u-mbb1.u-mbb0-last
+								button.u-db.u-w100p.o-btn.o-btn--large(type="submit") Submit
+
+
+				.u-mbb0-lg.c-footer__social
+					.container.u-pxb0-lg
+						.u-df.justify-content-center.justify-content-lg-between
+							each item in site.data.footersocial
+								.u-mrb4.u-mrb0-last.c-footer__social-item
+									a.u-link-tdn.u-link-colorstay.c-footer__social-link(href=item.href, title=item.icon, target="_blank", rel="nofollow noopener")
+										+icon(item.icon).u-db.u-fill-cc.c-footer__social-icon
+
+
+	.u-c-tertiary3.u-tac.c-footer__bottom
+		.container.u-df-xl
+			nav.u-fx1.u-mbb1.u-df-sm.justify-content-sm-center.justify-content-xl-start.u-mrb3-xl.c-footer__bottomnav
+				each item in site.data.footerbottommenu
+					.u-mbb1.u-mbb0-last.u-mbb0-sm.u-mrb3-sm.u-mrb0-last.c-footer__bottomnav-item
+						a(href=item.href).u-link-colorstay=item.text
+			.u-fx1.u-df-sm.justify-content-sm-center
+				p.u-mbb1.u-mbb0-sm.u-mrb3-sm.u-mrb0-last Copyright &copy; 2019 Feliz Puente Pty Ltd
+				p.u-mbb1.u-mbb0-sm.u-mrb3-sm.u-mrb0-last Limited trading as BridgeClimb Sydney
+

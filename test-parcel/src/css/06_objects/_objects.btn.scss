@@ -1,0 +1,89 @@
+.o-btn {
+	$_this: &;
+
+	/* crit:start */
+	@include btn-unstyled;
+	@include fsbtn;
+	position: relative;
+	overflow: hidden;
+	background-color: $primary;
+	border-radius: 2px;
+	padding: 7px 12px;
+	border: 1px solid $primary;
+	text-transform: uppercase;
+	color: $tertiary6;
+	text-align: center;
+	/* crit:end */
+
+	transition: .5s;
+
+	&:hover{
+		background-color: #FACC41;
+		border-color: #FACC41;
+	}
+
+	&:focus {
+		border-color: #F28E42;
+		box-shadow: inset 0 0 0 1px #F28E42;
+		outline: 0;
+	}
+
+	&:disabled, &.is-disabled{
+		color: #fff;
+		border-color: $border;
+		background: $border;
+		cursor: not-allowed;
+	}
+
+	&--secondary {
+		background-color: #fff;
+		color: $secondary2;
+		border-color: $secondary;
+
+		&:hover{
+			color: #fff;
+			background-color: $secondary;
+			border-color: $secondary;
+		}
+
+		&:focus {
+			border-color: $secondary;
+			box-shadow: inset 0 0 0 1px $secondary;
+		}
+	}
+
+	&--bdra0{
+		border-radius: 0;
+	}
+
+	&--large{
+		@include fzlh(20px, 29px);
+		padding: 12px 24px;
+	}
+
+	&--c{
+		&-fff{
+			color: #fff;
+		}
+	}
+
+	&--bgc{
+		&-transparent{
+			background-color: transparent;
+
+			&#{$_this}--c-fff{
+				&:hover, &:focus{
+					background-color: #fff;
+					border-color: #fff;
+					color: $text;
+				}
+			}
+		}
+	}
+
+	&--bd{
+		&-currentColor{
+			border-color: currentColor;
+		}
+	}
+}

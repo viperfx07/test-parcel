@@ -1,0 +1,33 @@
+mixin module--slider()
+	.u-myb4.c-module.c-module--slider
+		.c-module__inner
+			.c-slider
+				.c-slider__slider(data-module="slickjs", data-module-options="{ key: 'slider', legendCaptionSelector: '.c-slider__legend-caption', dots: true, arrows: false, mobileFirst: true }")
+					each item in [1,2,3,4]
+						.u-pxb1-md.slick-slide(data-caption="Image caption " + item)
+							figure.u-posr.u-db.u-tac
+								.u-embed.u-embed--16by9.u-bgimg.js-lazysizes(data-bgset="https://picsum.photos/id/"+(550+item)+"/2160/700")
+									img.u-bgimg__backup.js-lazysizes(
+										data-src="https://picsum.photos/id/"+(550+item)+"/2160/700"
+										alt=""
+									)
+								.u-embed__item.u-bg-scrim-flat.c-slider__slider-slidescrim
+								if item == 2
+									.u-embed__item.u-bg-scrim-flat
+									//- video
+									button.u-btn-unstyled.u-absolute-center(
+										data-mfp-src="https://www.youtube.com/watch?v=TErY2zPsPbk"
+										title="Play video",
+										aria-label="Play video"
+										data-module="magnificpopup"
+										data-module-options="{ key: 'iframe' }"
+									)
+										<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M66.6666 39.9998C66.6666 54.7274 54.7276 66.6665 40 66.6665C25.2724 66.6665 13.3333 54.7274 13.3333 39.9998C13.3333 25.2722 25.2724 13.3332 40 13.3332C54.7276 13.3332 66.6666 25.2722 66.6666 39.9998ZM73.3333 39.9998C73.3333 58.4093 58.4095 73.3332 40 73.3332C21.5905 73.3332 6.66663 58.4093 6.66663 39.9998C6.66663 21.5903 21.5905 6.6665 40 6.6665C58.4095 6.6665 73.3333 21.5903 73.3333 39.9998ZM34.4444 53.8889L48.3333 40L34.4444 26.1111V53.8889Z" fill="#fff"/>
+										</svg>
+
+				.container.u-fullwidthcontainer-smdown.c-slider__legend
+					.row.no-gutter-smdown
+						.col-md-10.offset-md-1
+							.u-pyb1p5.u-tac
+								.caption.c-slider__legend-caption

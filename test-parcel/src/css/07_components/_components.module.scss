@@ -1,0 +1,77 @@
+.c-module {
+    $_this: &;
+    #{&} & {
+        margin: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &__col {
+        #{$_this} #{$_this} & {
+            flex-basis: 100%;
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+    &__mobilefullwidthimg {
+        .c-module--richtext.is-cols-1 & {
+            @include mq-down(sm) {
+                margin-left: calc((100vw - #{map-get($container-max-widths, 'sm') - $grid-gutter-width}) / -2);
+                margin-right: calc((100vw - #{map-get($container-max-widths, 'sm') - $grid-gutter-width}) / -2);
+                width: 100vw;
+                max-width: none;
+            }
+            @include mq-down(xs) {
+                margin-left: -$grid-gutter-width/2;
+                margin-right: -$grid-gutter-width/2;
+                width: 100vw;
+                max-width: none;
+            }
+        }
+        .c-module--richtext & {
+            @include mq-down(xs) {
+                margin-left: -$grid-gutter-width/2;
+                margin-right: -$grid-gutter-width/2;
+                width: 100vw;
+                max-width: none;
+            }
+        }
+	}
+	&--section{
+		#{$_this}__pagetitleintro + &{
+			@include mq(md){
+				margin-top: 40px;
+			}
+		}
+	}
+    &--testimonial {
+        &:last-child {
+            margin-bottom: calc(#{percentage(tan($theme-angle)) * -1} - 1.5px);
+        }
+        #{$_this}--tiles+& {
+            margin-top: calc(#{percentage(tan($theme-angle)) * -1} - (32px - 8px));
+            @include mq(md) {
+                margin-top: calc(#{percentage(tan($theme-angle)) * -1} - (48px - 16px));
+            }
+        }
+    }
+    &--tiles {
+        &:last-child {
+            margin-bottom: calc(#{percentage(tan($theme-angle)) * -1} - 1.5px);
+        }
+        #{$_this}--testimonial + & {
+            margin-top: calc(#{percentage(tan($theme-angle)) * -1} - (32px - 8px));
+            @include mq(md) {
+                margin-top: calc(#{percentage(tan($theme-angle)) * -1} - (48px - 16px));
+            }
+        }
+    }
+    &-richtext {
+        &__col {
+            .c-module .c-module--richtext & {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

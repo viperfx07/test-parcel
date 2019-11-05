@@ -1,0 +1,9 @@
+mixin module--accordion(data)
+	- data = data || site.data.moduleaccordion
+	section.u-myb4.c-module.c-module--accordion&attributes(attributes)
+		.c-module__inner
+			.container
+				.row
+					.col-md-10.offset-md-1.col-lg-8.offset-lg-2
+						// give accordion an integer increment for several accordion possibility
+						+accordion("contentaccordion1", data)

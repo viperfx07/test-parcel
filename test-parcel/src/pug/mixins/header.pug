@@ -1,0 +1,108 @@
+mixin header(hasNoHero)
+	-var headroomOptions = `{ offset: 160 }`
+	.u-bgc-tertiary5.u-posf.u-z5.u-t0.u-l0.u-h100p.u-w100p.c-header__inner(data-module="headroom" data-module-options=headroomOptions)
+		.container.u-h100p.u-df.u-fxdc.justify-content-center.u-c-fff.u-pyb1p5.u-pyb2-sm.u-pxb6-xl.u-ptb2p5-xl.u-pbb4-xl.c-header__container
+			.u-df.justify-content-between.align-items-center.align-items-xl-end.c-header__container-inner
+				a.u-fxs0.u-db(href="/", title="Home")
+					img.c-header__logo-img(src="/www_shared/assets/img/logo.svg", alt="BridgeClimb logo")
+
+				nav.u-dn.u-db-xl.c-nav-main(data-module="megamenu", data-module-options="{ key: 'header' }")
+					.c-nav-main__menu.u-dn.u-df-lg.justify-content-between.js-megamenu-menu
+						each item in site.data.menu_desktop
+							.u-posr.b-fsnavprimary.u-mrb4p5.u-mrb0-last.c-nav-main__item.js-megamenu-topnavitem
+								a.u-focus-outline0.u-link-colorstay.u-link-tdn.c-nav-main__link(href=item.href)
+									span=item.text
+								span.u-db.u-posa.u-l0.u-b0.u-w100p.u-bgc-primary.c-nav-main__indicator
+
+								.b-fsnavsecondary.u-posa.u-o0.u-z-1.u-bgc-text.u-pyb1.c-nav-main__subnav.js-megamenu-panelgroup.js-megamenu-panel(class=!(item.submenu && item.submenu.length) ? "u-dn": "")
+									if item.submenu && item.submenu.length
+										each itemsub in item.submenu
+											a.u-focus-outline0.u-pxb3.u-pyb1.u-db.u-link-colorstay.u-link-tdn.c-nav-main__subnav-link(href=itemsub.href)
+												nobr.u-dib.c-nav-main__subnav-link-text=itemsub.text
+
+				.u-df.u-fxdc.align-items-end
+					div(data-module="megamenu", data-module-options="{ key: 'header' }")
+						.u-posr.u-dn.u-df-xl.u-c-fff.u-mbb3-lg.c-nav-sub.js-megamenu-menu
+							.js-megamenu-topnavitem.u-mrb6.u-mrb0-last
+								a.u-db.u-posr.u-link-colorstay.c-nav-main__link(href="#", title="Map")
+									+icon('map').u-fill-cc
+								.u-dn.b-fsnavsecondary.u-posa.u-o0.u-z-1.u-bgc-text.u-pyb1.c-nav-main__subnav.js-megamenu-panelgroup.js-megamenu-panel
+
+							.js-megamenu-topnavitem.u-mrb6.u-mrb0-last
+								a.u-db.u-posr.u-link-colorstay.c-nav-main__link(href="#", title="FAQ")
+									+icon('faq').u-fill-cc
+								.u-dn.b-fsnavsecondary.u-posa.u-o0.u-z-1.u-bgc-text.u-pyb1.c-nav-main__subnav.js-megamenu-panelgroup.js-megamenu-panel
+
+							.js-megamenu-topnavitem.u-mrb6.u-mrb0-last
+								a.u-db.u-posr.u-link-colorstay.c-nav-main__link(href="#", title="Language")
+									+icon('language').u-fill-cc
+									span.u-db.u-posa.u-l0.u-b0.u-w100p.u-bgc-primary.c-nav-main__indicator
+
+								.u-mtb2.b-fsnavsecondary.u-posa.u-o0.u-z-1.u-bgc-text.u-pyb1.c-nav-main__subnav.c-nav-main__subnav--lang.js-megamenu-panel
+									.js-megamenu-panelgroup
+										each item in site.data.languages
+											a.u-focus-outline0.u-pxb3.u-pyb1.u-df.justify-content-between.align-items-center.u-link-colorstay.u-link-tdn.c-nav-main__subnav-link(href='#')
+												nobr.u-dib.c-nav-main__subnav-link-text=item.title
+												span.u-df
+													span.caption.u-mrb1=item.short
+													+icon('check16').o-icon--s
+							.js-megamenu-topnavitem.u-mrb6.u-mrb0-last
+								a.u-db.u-posr.u-link-colorstay.c-nav-main__link(id="offcanvassearchtoggle" href="#", title="Search", data-module="vtoggle", data-module-options="{ target: 'html', class: 'is-offcanvassearch-active' }")
+									span(data-module="focuson", data-module-options="{ target: '#offcanvassearchinput' }")
+										+icon('search').u-fill-cc
+								//- button.u-btn-unstyled.u-embed__item(id="offcanvassearchtoggle", data-module="vtoggle", data-module-options="{ target: 'html', class: 'is-offcanvassearch-active' }")
+								//- 	span(data-module="focuson", data-module-options="{ target: '#offcanvassearchinput' }") Search Toggle
+								.u-dn.b-fsnavsecondary.u-posa.u-o0.u-z-1.u-bgc-text.u-pyb1.c-nav-main__subnav.js-megamenu-panelgroup.js-megamenu-panel
+
+					.u-df.align-items-center
+						a.u-link-colorstay.u-posr.u-mrb3(href="#", title="Cart")
+							+icon('cart').u-fill-cc.o-icon--l
+							div(data-module="loadcontainer", data-module-options="{ name: 'ContainerCartBadge' }")
+								.b-fsformxsmall.u-fw700.u-tac.u-posa.u-bgc-primary.u-c-text.u-bdra50p(style="width: 20px; height: 20px; top: -8px; left: -8px;")
+
+						a.u-link-tdn.u-dn.u-dib-xl.o-btn.o-btn--large.c-header__bookbtn(href="book.html") Book Now
+
+						button.u-df.u-fxdc.justify-content-center.align-items-center.u-lh1.u-dn-xl.hamburger.hamburger--vortex.c-header__mobiletoggle(type="button" data-module="vtoggle" data-module-options="{ target: 'html', class: 'is-menu-active' }")
+							span.hamburger-box
+								span.hamburger-inner
+
+	.u-dn-xl.c-nav-mobile
+		.u-posf.u-t0.u-l0.u-z-1.u-o0.u-h100p.u-w100p.u-bg-scrim-flat.c-nav-mobile__overlay
+		.u-posf.u-t0.u-r0.u-z5.u-h100p.u-w100p.u-bgc-fff.u-pyb3.u-pxb3p5.u-df.u-fxdc.justify-content-between.c-nav-mobile__inner
+			div
+				.u-df.u-mbb3.justify-content-end
+					button.u-db.u-lh1.hamburger.hamburger--vortex.c-header__mobiletoggle.is-active(type="button" data-module="vtoggle" data-module-options="{ target: 'html', class: 'is-menu-active' }")
+						span.hamburger-box
+							span.hamburger-inner
+
+				.u-posr.u-mbb3
+					input(type="search", placeholder="Search")
+					+icon('search').u-vertical-center.u-r0.u-mrb2
+
+				nav.u-mbb2p5.c-nav-mobile__nav.u-c-text
+					each item in site.data.menu
+						.u-df.align-items-center.justify-content-between.u-pxb1.u-pyb1.u-bdb.c-nav-mobile__item
+							a.u-link-colorstay(href=item.href)=item.text
+							button.u-btn-unstyled.u-lh1(type="button", title="Open" + item.text + " sub navigation")
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M5.83163 14.4429L4.83508 13.5571L9.77472 7.99999L4.83508 2.4429L5.83163 1.55708L11.5587 7.99999L5.83163 14.4429Z" fill="#518490"/>
+								</svg>
+
+				.u-pxb1
+					.u-db.u-mbb2.u-mbb0-last
+						a.u-link-colorstay(href="#") Groups
+					.u-db.u-mbb2.u-mbb0-last
+						a.u-link-colorstay(href="#") Gift Shop
+					.u-db.u-mbb2.u-mbb0-last
+						button.u-btn-unstyled(type="button") Are you...?
+
+			div
+				.u-mbb4.u-df.justify-content-center
+					each item in ['faq', 'map', 'language', 'intercomm']
+						a.u-dib.u-mrb5.u-mrb0-last(href="#", title=item)
+							img(src="/www_shared/assets/img/" + item + ".svg", alt)
+
+				a(href="#").u-db.o-btn.o-btn--large Book Now
+
+
+

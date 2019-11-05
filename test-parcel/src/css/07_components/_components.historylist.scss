@@ -1,0 +1,24 @@
+.c-historylist{
+	&__item{
+		&-circle{
+			left: -5px;
+
+			&-inner{
+				width:9px;
+				height:9px;
+			}
+		}
+		&-line{
+			left: -1px;
+			transform: none;
+		}
+	}
+
+	&__media{
+		flex-basis: 112px;
+
+		@include mq(sm){
+			flex-basis: 186px;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+.c-exploretile {
+    &__media {
+        max-width: 112px;
+        flex-basis: 112px;
+        @include mq(sm) {
+            max-width: 180px;
+            flex-basis: 180px;
+        }
+    }
+}

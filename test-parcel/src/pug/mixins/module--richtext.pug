@@ -1,0 +1,17 @@
+mixin module--richtext(data)
+	.u-myb4.c-module.c-module--richtext(class=data && data.length ? "is-cols-"+data.length : "")
+		.c-module__inner
+			.container
+				.row
+					.col-md-10.offset-md-1.col-lg-8.offset-lg-2.o-richtext
+						if !data
+							block
+						else
+							if data.length
+								.row
+									each item in data
+										.col-12.col-sm.u-mbb4.u-mbb0-last.u-mbb0-sm.o-richtext
+											if item.img
+												img.js-lazysizes.o-richtext__img(data-src=item.img || 'https://unsplash.it/720/560', alt)
+
+												|!{item.text}
